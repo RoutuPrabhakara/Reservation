@@ -8,7 +8,9 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 dotenv.config()
-mongoose.connect('mongodb+srv://routuprabhakar2000:Iq1Bc1tq5CsVS9Z5@cluster0.qlt9i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://routuprabhakar2000:Iq1Bc1tq5CsVS9Z5@cluster0.qlt9i.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', 
+    { useNewUrlParser: true, useUnifiedTopology: true }
+)
 // mongodb+srv://bhaskarAntoty123:bhaskar3958@bhaskarantony.wagpkay.mongodb.net/?retryWrites=true&w=majority
 .then(()=>{
     console.log("Mongodb is conceted")
