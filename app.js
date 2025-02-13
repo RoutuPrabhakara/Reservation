@@ -70,11 +70,7 @@ app.post('/registration',async(req,res)=>{
 app.get('/getreservations',async(req,res)=>{
     try {
         const reservation =  await database.find();
-        const formatedata = reservation.map(reservation =>({
-                ...reservation_doc,
-                date:reservation.date.toISOString().split('T')[0]
-        }))
-        res.json(formatedata)
+        res.json(reservation)
     } catch (error) {
         console.log(error)
     }
